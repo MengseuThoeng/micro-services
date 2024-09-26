@@ -1,0 +1,29 @@
+spring.application.name: config-server
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MengseuThoeng/config-server-properties.git
+          clone-on-start: true
+          search-paths:
+            - /**
+        default-label: main
+
+  kafka:
+    bootstrap-servers: 128.199.137.87:9092
+server:
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
+
