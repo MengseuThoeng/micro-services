@@ -10,7 +10,7 @@ spring:
           search-paths:
             - /**
           username: MengseuThoeng
-          password: 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
+          password:
 
         default-label: main
   kafka:
