@@ -1,0 +1,11 @@
+spring:
+  application.name: oauth2
+
+  profiles:
+    active: dev
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

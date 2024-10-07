@@ -23,3 +23,11 @@ spring:
   kafka:
     bootstrap-servers: 128.199.137.87:9092
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
+
+

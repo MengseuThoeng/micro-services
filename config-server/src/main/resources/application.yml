@@ -9,10 +9,23 @@ spring:
           clone-on-start: true
           search-paths:
             - /**
-        default-label: main
+          username: MengseuThoeng
+          password: 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
 
+        default-label: main
   kafka:
     bootstrap-servers: 128.199.137.87:9092
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8989/eureka/
+
+
 server:
   port: 8888
 
