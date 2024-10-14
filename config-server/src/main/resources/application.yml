@@ -9,7 +9,8 @@ spring:
           clone-on-start: true
           search-paths:
             - /**
-
+          username: ${MengseuThoeng}
+          password: ${password}
 
         default-label: main
   kafka:
