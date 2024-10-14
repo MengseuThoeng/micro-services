@@ -10,7 +10,7 @@ spring:
           search-paths:
             - /**
           username: MengseuThoeng
-          password: ${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}
+          password: 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
 
         default-label: main
   kafka:
@@ -38,5 +38,18 @@ management:
     health:
       show-details: always
 
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://eureka-server:8989/eureka/
 
