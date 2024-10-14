@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/MengseuThoeng/config-server-properties.git
+          uri: ${url.repo}
           clone-on-start: true
           search-paths:
             - /**
