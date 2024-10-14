@@ -9,8 +9,7 @@ spring:
           clone-on-start: true
           search-paths:
             - /**
-          username: MengseuThoeng
-          password: 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
+
 
         default-label: main
   kafka:
