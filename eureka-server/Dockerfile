@@ -1,5 +1,4 @@
 FROM gradle:8.10.0-jdk21 AS builder
-ENV SPRING_PROFILES_ACTIVE=dev
 WORKDIR /app
 COPY / .
 RUN gradle build --no-daemon

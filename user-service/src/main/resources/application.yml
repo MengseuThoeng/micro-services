@@ -1,19 +1,17 @@
 spring.application.name: user-service
 
 spring:
-  profiles:
-    active: dev
+  config:
+    import: "optional:configserver:"
 
   data:
     mongodb:
-      uri: mongodb://seu:seu@mongodb:27017/
-      authentication-database: admin
-      database: mongodb
-  config:
-    import: "optional:configserver:"
+      uri: mongodb://localhost:27017/mongodb
+
   cloud:
     config:
-      uri: http://config-server:8888
+      uri: http://localhost:8888
+
     bus:
       refresh:
         enabled: true
@@ -26,3 +24,18 @@ management:
       exposure:
         include:
           - prometheus
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://config-server:8888
+
+  data:
+    mongodb:
+      uri: mongodb://seu:seu@mongodb:27017/
+      authentication-database: admin
+      database: mongodb

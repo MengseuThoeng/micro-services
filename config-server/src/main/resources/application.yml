@@ -5,12 +5,10 @@ spring:
     config:
       server:
         git:
-          uri: ${url.repo}
+          uri: https://github.com/MengseuThoeng/config-server-properties.git
           clone-on-start: true
           search-paths:
             - /**
-          username: ${MengseuThoeng}
-          password: ${password}
 
         default-label: main
   kafka:
