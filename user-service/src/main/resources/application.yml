@@ -1,6 +1,9 @@
 spring.application.name: user-service
 
 spring:
+  profiles:
+    active: dev
+
   config:
     import: "optional:configserver:"
 

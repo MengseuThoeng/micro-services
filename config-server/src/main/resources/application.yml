@@ -40,7 +40,7 @@ management:
 spring:
   config:
     activate:
-      on-profile: docker
+      on-profile: prod
 
 eureka:
   instance:

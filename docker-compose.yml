@@ -175,7 +175,7 @@ services:
     ports:
       - "8989:8989"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=prod
       - CONFIG_SERVER_URI=http://config-server:8888
     networks:
       - microservices-network
@@ -193,7 +193,7 @@ services:
     ports:
       - "8888:8888"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=prod
       - CONFIG_SERVER_URI=http://localhost:8888
     networks:
       - microservices-network
@@ -247,9 +247,24 @@ services:
       timeout: 10s
       retries: 5
 
+  oauth2-db:
+    image: "postgres:16.4-bullseye"
+    container_name: "blog-oauth2-db"
+    ports:
+      - "2345:5432"
+    volumes:
+      - oauth2-db-vol:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "seu"
+      POSTGRES_PASSWORD: "123"
+      POSTGRES_DB: "oauth2"
+    networks:
+      - microservices-network
+
 volumes:
   course_mongodb_data_vol:
   course_mongodb_log_vol:
+  oauth2-db-vol:
 
 networks:
   microservices-network:

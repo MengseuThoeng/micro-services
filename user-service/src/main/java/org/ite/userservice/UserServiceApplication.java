@@ -27,6 +27,7 @@ public class UserServiceApplication {
         Faker faker = new Faker();
         System.out.println("User Service Started");
         User user = new User();
+        user.setId(String.valueOf(faker.idNumber()));
         user.setName(faker.name().fullName());
         user.setEmail(faker.internet().emailAddress());
         user.setUsername(faker.name().username());
